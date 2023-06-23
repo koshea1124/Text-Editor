@@ -14,13 +14,13 @@ const initdb = async () =>
 
 // TODO: Add logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
-  const db = await openDB ('jate', 1);
+  const db = await openDB('jate', 1);
   const tx = db.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
-  const result =store.put({id:1, value: content});
+  const result = store.put({id:1, value: content});
   const request = await result;
   console.log(request);
-  console.log('added content to database');
+  console.log('putDb completed');
 }
  
 
@@ -29,12 +29,11 @@ export const getDb = async () => {
   const db = await openDB('jate', 1);
   const tx = db.transaction('jate', 'readonly');
   const store = tx.objectStore('jate');
-  const content = store.get(1);
+  const content =  store.get(1);
   const result = await content;
   console.log('result: ', result);
-  console.log('added content to data base');
+  console.log('getDb completed');
   return result ?.value;
-
 }
 
 initdb();

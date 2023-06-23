@@ -30,10 +30,12 @@ module.exports = () => {
         inject: true,
         name: 'Just Another Text Editor',
         short_name: 'JATE',
-        description: 'standalone',
+        description: 'Text Editor',
+        display: 'standalone',
         background_color: '#ffffff',
         start_url: '/',
         publicPath: '/',
+        crossorigin: "use-credentials",
         icons: [
           {
             src: path.resolve("src/images/logo.png"),
@@ -52,7 +54,7 @@ module.exports = () => {
         },
         {
           test: /\.m?js$/,
-          exlude: /node_modules/,
+          exclude: /(node_modules)/,
           use: {
             loader: 'babel-loader',
             options: {
