@@ -35,7 +35,6 @@ module.exports = () => {
         background_color: '#ffffff',
         start_url: '/',
         publicPath: '/',
-        crossorigin: "use-credentials",
         icons: [
           {
             src: path.resolve("src/images/logo.png"),
